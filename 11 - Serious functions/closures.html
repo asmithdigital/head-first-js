@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+
+	// function makeCounter(){
+	// 	var count = 0;
+
+	// 	function counter(){
+	// 		count = count + 1;
+	// 		return count;
+	// 	}
+	// 	return counter;
+	// }
+
+	// returns the counter function along with its environment
+
+	// console.log(makeCounter());
+
+
+	// var doCount = makeCounter();
+
+	// console.log(doCount());
+	// console.log(doCount());
+	// console.log(doCount());
+
+
+	// test 1
+
+	function makePassword(password){
+		return function (passwordGuess){
+			return (passwordGuess === password);
+		}
+	}
+
+	var pGuess = makePassword(4);
+	console.log(pGuess(4));
+
+
+
+	// test 2
+
+	function multN(n) {
+		return function (multiple){
+			return multiple * n;
+		}
+		return multiple;
+	}
+
+	var multiplyByN = multN(3);
+	console.log(multiplyByN(2));
+
+
+	// rebuild the count closure function to return an object
+
+	function makeCounter(){
+		var count = 0;
+		return {
+			increment: function (){
+			count++;
+			return count;
+			}
+		}
+	}
+
+	var counter = makeCounter();
+
+	console.log(counter.increment());
+	console.log(counter.increment());
+	console.log(counter.increment());
+
+
+	function setTimer (doneMessage, n){
+			setTimeout (function(){
+				alert(doneMessage);
+			}, n);
+			doneMessage = "OUCH!"; // new value set within the environment
+		}
+
+		setTimer("Cookies are done!", 1000)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

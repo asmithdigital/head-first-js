@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+	// dog constructor
+	function Dog(name, breed, weight) {
+		this.name = name;
+		this.breed = breed;
+		this.weight = weight;
+	}
+
+	// Dog prototypes
+	Dog.prototype.species = "Canine";
+
+	Dog.prototype.bark = function() { 
+		if (this.weight > 25) {
+			console.log(this.name + " says Woof!"); 
+		} else {
+			console.log(this.name + " says Yip!"); 
+		}
+	};
+
+	Dog.prototype.run = function() {
+		console.log("Run!"); 
+	};
+	Dog.prototype.wag = function() {
+		console.log("Wag!"); 
+	};
+
+	Dog.prototype.sit = function (){
+		// console.log(this.name + " is now sitting!");
+		if (this.sitting) {
+			console.log(this.name + " is already sitting!");
+		} else{
+			this.sitting = true;
+			console.log(this.name + " is now sitting!");
+		};
+	}
+
+	Dog.prototype.sitting = false;
+
+	// Dogs
+
+	var fido = new Dog("Fido", "Mixed", 38);
+	var fluffy = new Dog("Fluffy", "Poodle", 30); 
+	var spot = new Dog("Spot", "Chihuahua", 10);
+
+	var barnaby = new Dog ("Barnaby", "Basset Hound", 55);
+
+	// Spots own method
+	spot.bark = function (){
+		console.log(this.name + " says WOOF!");
+	}
+
+	// fido.bark(); 
+	// fido.run(); 
+	// fido.wag();
+
+	// fluffy.bark(); 
+	// fluffy.run(); 
+	// fluffy.wag();
+
+	// spot.bark(); 
+	// spot.run(); 
+	// spot.wag();
+
+	barnaby.sit();
+	barnaby.sit();
+
+	console.log(spot.hasOwnProperty("sitting"));
+	spot.sit();
+	console.log(spot.hasOwnProperty("sitting"));
+	spot.sit();
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

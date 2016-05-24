@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		.red-text{color: red;}
+	</style>
+
+	<script type="text/javascript">
+	function init (){
+		
+		// good idea to check whether the id == null before use
+		var planet = document.getElementById("greenplanet");
+		// console.log(planet.innerHTML);
+		planet.innerHTML = "Red Alert: hit by phaser fire!";
+		planet.setAttribute("class", "red-text");
+
+		var scoop = document.getElementById("raspberry");
+		scoop.setAttribute("alt", "thealt");
+		var altText = scoop.getAttribute("alt");
+
+		if (scoop == null) {
+			console.log("no alt attribute");
+		} else {
+			console.log("something something, ");
+			console.log("apparently it looks like " + altText);
+
+		};
+
+	}
+
+	window.onload = init;
+		
+	</script>
+
+</head>
+<body>
+
+<p id="greenplanet">some text</p>
+<p id="redplanet"></p>
+<p id="blueplanet"></p>
+<img src="" alt="the attribute" id="raspberry"> 
+
+</body>
+</html>

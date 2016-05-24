@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		var cadi = {
+			color: "tan",
+			year: 1957,
+			make: "GM",
+			model: "Cadillac",
+			convertable: false,
+			passengers: 5,
+			started: false,
+		    start: function(){
+		    	this.started = true;
+		    },
+		    stop: function(){
+		    	this.started = false;
+		    },
+		    drive: function() {
+		    	if (this.started){
+		    		alert(this.make + " " + this.model + " goes Zoom Zoom!");
+		    	} else {
+		    		alert("You need to start the car first");
+		    	}
+		    }
+		}
+
+		var chevy = {
+			make: "GM",
+			model: "Cadillac",
+			year: 1955, 
+			color: "tan",
+			passengers: 5,
+			convertible: false,
+			mileage: 12892,
+			started: false,
+		    start: function(){
+		    	this.started = true;
+		    },
+		    stop: function(){
+		    	this.started = false;
+		    },
+		    drive: function() {
+		    	if (this.started){
+		    		alert(this.make + " " + this.model + " goes Zoom Zoom!");
+		    	} else {
+		    		alert("You need to start the car first");
+		    	}
+		    }
+		}
+
+		var taxi = {
+			make: "Webville motors",
+			model: "Taxi",
+			year: 1955,
+			color: "yellow",
+			passangers: 4,
+			convertible: false,
+			mileage: 281341,
+			started: false,
+		    start: function(){
+		    	this.started = true;
+		    },
+		    stop: function(){
+		    	this.started = false;
+		    },
+		    drive: function() {
+		    	if (this.started){
+		    		alert(this.make + " " + this.model + " goes Zoom Zoom!");
+		    	} else {
+		    		alert("You need to start the car first");
+		    	}
+		    }
+		}
+
+		// loop through an object
+		for(var prop in chevy){
+			console.log(prop + ": " + chevy[prop]);
+		}
+
+		//these do the same thing
+		console.log(chevy.mileage)
+		console.log(chevy["mil" + "eage"]);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

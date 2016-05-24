@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript">
+	
+	var products = ["Choo choo chocolate", "Icy mint", "Cake batter", "Bubblegum"];
+	var hasBubbleGum = [false, false, false, true];
+
+	var i = 0;
+
+	while (i < hasBubbleGum.length){
+		if(hasBubbleGum[i]){
+			console.log(products[i] + " contains bubble gum - the while loop");
+		}
+		i = i + 1;
+	}
+
+	for (var i = 0; i < products.length; i++) {
+		if (hasBubbleGum[i]){
+			console.log("The " + "'" + hasBubbleGum[i] + "'" + " item is at the Array position of " + i)
+			console.log(products[i] + " contains bubble gum - the for loop");
+		}
+	};
+	
+
+</script>
+
+<body>
+
+</body>
+</html>

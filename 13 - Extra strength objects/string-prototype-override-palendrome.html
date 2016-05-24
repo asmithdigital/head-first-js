@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+
+	String.prototype.palindrome = function() {
+		var len = this.length-1;
+		for (var i = 0; i <= len; i++) {
+			if (this.charAt(i) !== this.charAt(len-i)) {
+				return false;
+			}
+			if (i === (len-i)) {
+				return true;
+			}
+		}
+		return true;
+	};
+
+	// 
+	// SUPER advanced way
+	//
+	String.prototype.palindromeAdv = function() {
+		var r = this.split("").reverse().join(""); // split the array and join it in reverse
+		return (r === this.valueOf()); // compare the original with the reverse array. 
+									   // this returns an aobject which cannot be comepared so the valeuOf method returns the sting
+	}
+
+	var phrases = ["eve",
+	               "kayak",
+	               "mom",
+	               "wow",
+	               "noon",
+	               "Not a palindrome"];
+
+	for (var i = 0; i < phrases.length; i++) {
+		var phrase = phrases[i];
+		if (phrase.palindrome()) {
+			console.log("'" + phrase + "' is a palindrome");
+		} else {
+			console.log("'" + phrase + "' is NOT a palindrome");
+		}
+
+		// The advance prototype override test
+		if (phrase.palindromeAdv()) {
+			console.log("'" + phrase + "' is a palindrome - Adv");
+		} else {
+			console.log("'" + phrase + "' is NOT a palindrome - Adv");
+		}
+	}
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

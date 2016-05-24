@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+		body{margin: 20px;}
+		img{margin: 20px;}
+	</style>
+
+	<script type="text/javascript">
+
+	window.onload = init;
+
+	function init(){
+		// var image = document.getElementById("zero");
+		// image.onclick = showAnswer;
+
+		var image = document.getElementsByTagName("img");
+		for (var i = 0; i < image.length; i++) {
+			image[i].onclick = showAnswer;
+		};
+	}
+
+	function showAnswer (evtObj){
+		// var image = document.getElementById("zero");
+		// image.src = "zero.jpg";
+
+		var image = evtObj.target;
+		var name = image.id;
+		name = name + ".jpg";
+		image.src = name;
+
+		setTimeout(reblur, 2000, image)
+	}
+
+	function reblur(image){
+		var name = image.id;
+		name = name + "blur.jpg";
+		image.src = name;
+	}
+	
+	</script>
+</head>
+<body>
+	<img src="zeroblur.jpg" alt="" id="zero">
+	<img src="oneblur.jpg" alt="" id="one">
+	<img src="twoblur.jpg" alt="" id="two">
+	<img src="threeblur.jpg" alt="" id="three">
+	<img src="fourblur.jpg" alt="" id="four">
+	<img src="fiveblur.jpg" alt="" id="five">
+</body>
+</html>
